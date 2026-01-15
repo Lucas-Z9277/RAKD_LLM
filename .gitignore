@@ -1,0 +1,36 @@
+# python 编译文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 虚拟环境
+venv/
+env/
+.env
+
+#IDE 设置
+.idea/
+.vscode/
+
+# 大型数据文件 (根据您的项目结构)
+data/
+*.txt
+*.tsv
+*.json
+*.pth
+*.bin
+
+# 模型检查点
+checkpoints/
+output/
+*_logs/
+
+# 忽略临时生成的索引文件
+item_freq.json
+user_roles_output.json
+intra_city_preferences.json
+user_distillation_candidates.json
+rakd_train.json
+
+# 系统文件
+.DS_Store

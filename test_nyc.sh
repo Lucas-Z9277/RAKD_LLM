@@ -1,0 +1,14 @@
+python main.py \
+--mode test \
+--batch_size 1 \
+--accumulate_grad_batches 1 \
+--dataset nyc \
+--llm_tuning lora \
+--llm_path Llama-2-7b-hf \
+--ckpt_path ./checkpoints/nyc/llara/last.ckpt \
+--output_dir ./output/nyc/ \
+--log_dir nyc_logs \
+--lr_warmup_start_lr 2e-6 \
+--lr 2e-5 \
+--lr_decay_min_lr 2e-6 \
+--max_epochs 4 > test_nyc_llara_ndcg.log 2>&1 &
