@@ -6,7 +6,7 @@ This repository contains the official implementation of the paper **"Role-Aware 
 It integrates two key components:
 
 1. **RAKD Framework**: A pipeline for Inter-city User Role Analysis, Intra-city Preference Inference, and Role-Distillation Retrieval Augmentation.
-2. **IGD-Tuning**: An Information Gain-driven fine-tuning objective to prioritize decisive tokens (e.g., POI names) during training.
+2. **Gain-driven fine-tuning**: An Information Gain-driven fine-tuning objective to prioritize decisive tokens (e.g., POI names) during training.
 
 ## 🌟 Architecture Overview
 
@@ -15,7 +15,7 @@ The framework consists of four main phases:
 1. **Role Analysis**: Inferring user social roles from schema trajectories.
 2. **Preference Inference**: Sliding continual learning for daily batch preferences.
 3. **Role Distillation**: Retrieving similar user profiles to augment the current user's context.
-4. **IGD-Tuning**: Fine-tuning Llama-2 with a token-decisiveness weighted loss.
+4. **Gain-driven fine-tuning**: Fine-tuning Llama-2 with a token-decisiveness weighted loss.
 
 ## 🛠️ Requirements
 We have provided a `requirements.txt` file for reference in setting up the environment.
@@ -55,7 +55,7 @@ Place your raw check-in data (e.g., `nyc.txt`) in the root directory or update t
 
 ### Step 2: Role & Preference Analysis (LLM-based)
 
-> **Note**: The scripts `role_analysis.py` and `preference_inference.py` contain a `mock_llm_inference` function. You **must** replace this with your actual API call (e.g., OpenAI API or local Llama-2 inference) to get real analysis results.
+> **Note**: The scripts `role_analysis.py` and `preference_inference.py` contain a `mock_llm_inference` function. You **must** replace this with your actual API call (e.g., API or local Llama-2 inference) to get real analysis results.
 
 **2.1 Inter-city User Role Analysis**
 Generates `user_roles_output.json`.
@@ -102,7 +102,7 @@ python generate_freq.py
 
 ## ⚡ Training (IGD-Tuning)
 
-We use **Llama-2-7b** as the backbone with **LoRA** for efficient fine-tuning. The `main.py` has been modified to support IGD-Tuning via the `--use_igd` flag.
+We use **Llama-2-7b** as the backbone. The `main.py` has been modified to support IGD-Tuning via the `--use_igd` flag.
 
 Run the training script:
 
