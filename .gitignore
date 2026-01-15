@@ -12,13 +12,6 @@ env/
 .idea/
 .vscode/
 
-# 大型数据文件 (根据您的项目结构)
-data/
-*.txt
-*.tsv
-*.json
-*.pth
-*.bin
 
 # 模型检查点
 checkpoints/
